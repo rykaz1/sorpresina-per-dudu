@@ -123,11 +123,13 @@ function toggleMusic(){
     const button=document.querySelector(".music-button");
     if(song.paused){
         song.play();
-        button.textContent="❚❚";
+        button.classList.add("is-playing");
+        button.setAttribute("aria-label", "Metti in pausa");
         player.classList.add("playing");
     }else{
         song.pause();
-        button.innerHTML="&#9654;";
+        button.classList.remove("is-playing");
+        button.setAttribute("aria-label", "Riproduci");
         player.classList.remove("playing");
     }
 }
