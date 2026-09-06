@@ -518,21 +518,44 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     border:
         1px solid
         rgba(216,154,170,0.5);
     border-radius: 50%;
     background: 
         rgba(216,154,170,0.12);
-    color: var(--accent);
-    font-size: 12px;
+    --icon-color: var(--accent);
     cursor: pointer;
     transition: 0.3s;
 }
 
+.music-button::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid var(--icon-color);
+    margin-left: 3px;
+}
+
+.music-button.is-playing::before{
+    width: 10px;
+    height: 14px;
+    border: none;
+    margin-left: 0;
+    background: 
+        linear-gradient(
+            to right,
+            var(--icon-color) 0 3px,
+            transparent 3px 7px,
+            var(--icon-color) 7px 10px
+        );
+}
 .music-button:hover{
     background-color: var(--accent);
-    color: #160d12;
+    --icon-color: #160d12;
     transform: scale(1.08);
 }
 
