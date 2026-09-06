@@ -127,7 +127,7 @@ function toggleMusic(){
         player.classList.add("playing");
     }else{
         song.pause();
-        button.textContent="▶";
+        button.innerHTML="&#9654;";
         player.classList.remove("playing");
     }
 }
